@@ -127,7 +127,7 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           Expanded(
-            flex: 4,
+            flex: 3,
             child: Stack(
               children: [
                 Container(
@@ -202,38 +202,48 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-              ],
-            ),
-          ),
-          Expanded(
-            child: Container(
-              color: Colors.brown,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  MyButton(
-                    childIcon: Icon(
-                      Icons.arrow_circle_left_outlined,
-                      size: 30,
-                    ),
-                    function: moveBackward,
+                Positioned(
+                  top: 100,
+                  left: 40,
+                  child: Row(
+                    children: [
+                      MyButton(
+                        childIcon: Icon(
+                          Icons.arrow_circle_left_outlined,
+                          size: 30,
+                        ),
+                        function: moveBackward,
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      MyButton(
+                        childIcon: Icon(
+                          Icons.arrow_circle_right_outlined,
+                          size: 30,
+                        ),
+                        function: moveForward,
+                      ),
+                    ],
                   ),
-                  MyButton(
+                ),
+                Positioned(
+                  top: 100,
+                  right: 40,
+                  child: MyButton(
                     childIcon: Icon(
                       Icons.arrow_circle_up_outlined,
                       size: 30,
                     ),
                     function: jump,
                   ),
-                  MyButton(
-                    childIcon: Icon(
-                      Icons.arrow_circle_right_outlined,
-                      size: 30,
-                    ),
-                    function: moveForward,
-                  )
-                ],
-              ),
+                )
+              ],
+            ),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.brown,
             ),
           ),
         ],
